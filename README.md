@@ -1,4 +1,4 @@
-# Modern AI/IoT Next.js Portfolio Template
+# Modern Next.js Portfolio Template
 
 A highly customizable, blazing fast, and beautifully animated portfolio template built with Next.js (App Router), Tailwind CSS v4, and Framer Motion. 
 
