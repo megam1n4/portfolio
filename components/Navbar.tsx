@@ -39,18 +39,15 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 max-w-5xl flex items-center justify-between relative z-50">
-        <Link 
-          href="/" 
+        <button
           onClick={(e) => {
-            if (window.location.pathname === "/") {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="text-xl font-bold tracking-tight relative z-50"
+          className="text-xl font-bold tracking-tight relative z-50 cursor-pointer"
         >
           {resumeData.name.split(" ")[0]}<span className="text-blue-500">.</span>
-        </Link>
+        </button>
         
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
