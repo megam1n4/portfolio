@@ -83,8 +83,8 @@ export const resumeData: ResumeData = {
   },
   name: "Rahul Debnath",
   role: "I build AI-enabled geospatial and IoT systems.",
-  profileImage: "/images/profile.jpg",
-  resumeUrl: "/resume.pdf",
+  profileImage: "./images/profile.jpg",
+  resumeUrl: "./resume.pdf",
   contact: {
     location: "Bryan, TX",
     phone: "(979)-645-0705",
