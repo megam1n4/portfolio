@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function FloatingBackground() {
   return (
-    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden hidden md:block">
       <motion.div
         animate={{
           y: [0, -40, 0],
