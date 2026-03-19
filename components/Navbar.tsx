@@ -32,10 +32,10 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 hover:shadow-[0_0_35px_rgba(59,130,246,0.4)] dark:hover:shadow-[0_0_35px_rgba(59,130,246,0.3)] ${
         scrolled
           ? "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-gray-200/50 dark:border-zinc-800/80 py-3"
-          : "bg-transparent py-6"
+          : "bg-transparent py-6 border-b border-transparent"
       }`}
     >
       <div className="container mx-auto px-6 max-w-5xl flex items-center justify-between relative z-50">

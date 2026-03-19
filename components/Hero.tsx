@@ -44,10 +44,24 @@ export default function Hero() {
             </motion.p>
             
             <motion.h1
-              variants={itemVariants}
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-gray-900 dark:text-gray-100"
+              className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-gray-900 dark:text-gray-100 flex flex-wrap gap-x-3"
             >
-              {resumeData.name}.
+              {resumeData.name.split(" ").map((word, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 40, rotate: 8 }}
+                  animate={{ opacity: 1, y: 0, rotate: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.2 + index * 0.15,
+                    type: "spring",
+                    stiffness: 120,
+                  }}
+                  className="inline-block"
+                >
+                  {word}
+                </motion.span>
+              ))}
             </motion.h1>
             
             <motion.h2
@@ -57,12 +71,23 @@ export default function Hero() {
               {resumeData.role}
             </motion.h2>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mb-12 leading-relaxed"
-            >
-              {resumeData.summary.split('.')[0]}. {resumeData.summary.split('.')[1]}.
-            </motion.p>
+            <div className="mb-12 flex flex-wrap">
+              {`${resumeData.summary.split('.')[0]}. ${resumeData.summary.split('.')[1]}.`.split(" ").map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  whileHover={{ scale: 1.05, color: "#3b82f6", y: -2 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.5 + i * 0.02,
+                  }}
+                  className="inline-block text-lg text-gray-600 dark:text-gray-300 mr-[0.3em] leading-relaxed cursor-default transition-colors"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </div>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
               <a
@@ -87,7 +112,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] relative flex-shrink-0"
           >
-            <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl animate-floating-subtle z-0 mix-blend-multiply dark:mix-blend-screen" />
+            <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl animate-floating-subtle z-0 mix-blend-multiply dark:mix-blend-screen hidden md:block" />
             <div className="relative w-full h-full rounded-full border-4 border-white dark:border-zinc-800 shadow-2xl overflow-hidden z-10 animate-floating">
               <Image 
                 src={resumeData.profileImage} 
